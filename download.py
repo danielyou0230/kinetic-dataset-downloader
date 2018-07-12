@@ -104,6 +104,7 @@ def download_clip(video_identifier, output_filename,
                '-c:v', 'libx264', '-c:a', 'copy',
                '-threads', '1',
                '-loglevel', 'panic',
+               '-an',
                '"%s"' % output_filename]
     command = ' '.join(command)
     try:
@@ -111,9 +112,9 @@ def download_clip(video_identifier, output_filename,
                                          stderr=subprocess.STDOUT)
     except subprocess.CalledProcessError as err:
         return status, err.output
- 
+
     file_size = os.stat(output_filename).st_size / 1024. / 1024.
-    print tmp_filename + ": " + str(file_size) + " MB"
+    print output_filename + ": " + str(file_size) + " MB"
     # Check if the video was successfully saved.
     status = os.path.exists(output_filename)
     os.remove(tmp_filename)
