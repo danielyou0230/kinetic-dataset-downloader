@@ -1,13 +1,5 @@
-openssl==1.0.2
 pandas==0.19.2
 pytz==2017.2
-readline==6.2
-setuptools==27.2.0
-six==1.10.0
-sqlite==3.13.0
-tk==8.5.18
-wheel==0.29.0
-zlib==1.2.8
 youtube-dl==2017.6.5
 olefile==0.44
 decorator==4.0.11
